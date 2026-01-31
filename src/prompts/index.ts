@@ -246,7 +246,7 @@ JSON:
 `;
 
 export const GEVAL_PROMPT_EVALUATE = `
-You will be given one Reply for a Source Text below. Your task is to rate the Reply on one metric.
+You will be given one Reply for a Prompt below. Your task is to rate the Reply on one metric.
 Please make sure you read and understand these instructions carefully. Please keep this document open while reviewing, and refer to it as needed.
 
 Evaluation Criteria:
@@ -254,9 +254,9 @@ Evaluation Criteria:
 
 Evaluation Steps:
 - {{steps}}
-- Given the evaluation steps, return a JSON with two keys: 1) a "score" key ranging from 0 - {{maxScore}}, with {{maxScore}} being that it follows the Evaluation Criteria outlined in the Evaluation Steps and 0 being that it does not; 2) a "reason" key, a reason for the given score, but DO NOT QUOTE THE SCORE in your reason. Please mention specific information from Source Text and Reply in your reason, but be very concise with it!
+- Given the evaluation steps, return a JSON with two keys: 1) a "score" key ranging from 0 - {{maxScore}}, with {{maxScore}} being that Reply follows the Evaluation Criteria outlined in the Evaluation Steps and 0 being that Reply does not; 2) a "reason" key, a reason for the given score, but DO NOT QUOTE THE SCORE in your reason. Please mention specific information from Prompt and Reply in your reason, but be very concise with it!
 
-Source Text:
+Prompt:
 {{input}}
 
 Reply:
@@ -266,7 +266,7 @@ Reply:
 IMPORTANT: Please make sure to only return in minified JSON format, with the "score" and "reason" key. No additional words, explanation or formatting is needed.
 
 Example JSON:
-{"score":0,"reason":"The text does not follow the evaluation steps provided."}
+{"score":0,"reason":"The text of reply does not follow the evaluation criteria provided."}
 **
 
 JSON:
